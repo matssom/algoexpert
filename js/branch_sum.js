@@ -17,3 +17,23 @@ const branchSums = (root) => {
 	}
 	return sums
 }
+
+// Recursive version
+const branchSumsRecursive = (root) => {
+	const sums = []
+	calculateBranchSums(root, 0, sums)
+	return sums
+}
+
+const calculateBranchSumsRecursive = (node, runningSum, sums) => {
+  if (!node) return
+	
+	const newRunningSum = runningSum + node.value
+	if (!node.left && !node.right) {
+		sums.push(newRunningSum)
+		return
+	}
+	
+	calculateBranchSumsRecursive(node.left, newRunningSum, sums)
+	calculateBranchSumsRecursive(node.right, newRunningSum, sums)
+}
