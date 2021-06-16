@@ -12,3 +12,11 @@ const nodeDepthRecursive = (node, depth) => {
 const nodeDepths = (root) => {
   return nodeDepthRecursive(root, 0)
 }
+
+class BinaryTree {
+	constructor(value) {
+	  this.value = value;
+	  this.left = null;
+	  this.right = null;
+	}
+}
